@@ -10,14 +10,15 @@ class SkillWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: Container(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(4)),
+            //border: Border.all(color: Colors.grey),
+            color: Colors.purple[50],
+            borderRadius: BorderRadius.circular(30)),
         child: Text(label,
             style: Theme.of(context)
                 .textTheme
-                .headline5
+                .subtitle1
                 .merge(GoogleFonts.robotoMono(color: Colors.deepPurple))),
       ),
     );
