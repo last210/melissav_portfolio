@@ -40,7 +40,7 @@ class _HomepageState extends State<Homepage> {
                                   .headline2
                                   .merge(GoogleFonts.robotoSlab())),
                           Text(
-                              "Hi, I'm Melissa Quintanilla, a passionate mobile designer and developer based in San Antonio, TX.",
+                              "Hi, I'm Melissa Quintanilla, a passionate mobile engineer and designe based in San Antonio, TX.",
                               style: Theme.of(context)
                                   .textTheme
                                   .headline6
