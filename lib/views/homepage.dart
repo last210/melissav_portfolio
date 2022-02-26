@@ -93,11 +93,11 @@ class _HomepageState extends State<Homepage> {
                                         'Present'),
                                     experienceTile(
                                         context,
-                                        'Cleartech Software, LLC',
+                                        'Cleartech Software',
                                         'COO',
                                         'Mar 2020',
                                         'Present'),
-                                    experienceTile(context, 'FloatMe Corp',
+                                    experienceTile(context, 'FloatMe',
                                         'Head of UX', 'Jul 2019', 'Mar 2020')
                                   ],
                                 ),
