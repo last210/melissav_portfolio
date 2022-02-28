@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:melissav_portfolio/utils/constants.dart';
+import 'package:melissav_portfolio/utils/responsive.dart';
 import 'package:melissav_portfolio/widgets/section_header.dart';
 import 'package:melissav_portfolio/widgets/skill.dart';
 
@@ -55,59 +56,117 @@ class _HomepageState extends State<Homepage> {
                             softWrap: true,
                           ),
                           Container(height: 20),
-                          Table(
-                            columnWidths: {
-                              0: IntrinsicColumnWidth(),
-                              1: FixedColumnWidth(10),
-                              2: IntrinsicColumnWidth()
-                            },
-                            children: [
-                              TableRow(children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 10),
-                                  child: SectionHeaderWidget(label: 'skills'),
-                                ),
-                                SizedBox(width: 20),
-                                SectionHeaderWidget(label: 'experience'),
-                              ]),
-                              TableRow(children: [
-                                Wrap(
-                                  runSpacing: 10,
+                          Responsive.isMobile(context)
+                              ? Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    for (var i in skills)
-                                      SkillWidget(
-                                        label: i,
-                                      )
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
+                                      child:
+                                          SectionHeaderWidget(label: 'skills'),
+                                    ),
+                                    Wrap(
+                                      runSpacing: 10,
+                                      children: [
+                                        for (var i in skills)
+                                          SkillWidget(
+                                            label: i,
+                                          )
+                                      ],
+                                    ),
+                                    SizedBox(height: 20),
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10),
+                                      child: SectionHeaderWidget(
+                                          label: 'experience'),
+                                    ),
+                                    Wrap(
+                                      direction: Axis.vertical,
+                                      spacing: 10,
+                                      children: [
+                                        experienceTile(
+                                            context,
+                                            'Amica Insurance',
+                                            'Mobile Engineer',
+                                            'Aug 2022',
+                                            'Present'),
+                                        experienceTile(
+                                            context,
+                                            'Cleartech Software',
+                                            'COO',
+                                            'Mar 2020',
+                                            'Present'),
+                                        experienceTile(
+                                            context,
+                                            'FloatMe',
+                                            'Head of UX',
+                                            'Jul 2019',
+                                            'Mar 2020')
+                                      ],
+                                    ),
                                   ],
-                                ),
-                                SizedBox(width: 20),
-                                Wrap(
-                                  direction: Axis.vertical,
-                                  spacing: 10,
+                                )
+                              : Table(
+                                  columnWidths: {
+                                    0: IntrinsicColumnWidth(),
+                                    1: FixedColumnWidth(10),
+                                    2: IntrinsicColumnWidth()
+                                  },
                                   children: [
-                                    experienceTile(
-                                        context,
-                                        'Amica Insurance',
-                                        'Mobile Engineer',
-                                        'Aug 2022',
-                                        'Present'),
-                                    experienceTile(
-                                        context,
-                                        'Cleartech Software',
-                                        'COO',
-                                        'Mar 2020',
-                                        'Present'),
-                                    experienceTile(context, 'FloatMe',
-                                        'Head of UX', 'Jul 2019', 'Mar 2020')
+                                    TableRow(children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 10),
+                                        child: SectionHeaderWidget(
+                                            label: 'skills'),
+                                      ),
+                                      SizedBox(width: 20),
+                                      SectionHeaderWidget(label: 'experience'),
+                                    ]),
+                                    TableRow(children: [
+                                      Wrap(
+                                        runSpacing: 10,
+                                        children: [
+                                          for (var i in skills)
+                                            SkillWidget(
+                                              label: i,
+                                            )
+                                        ],
+                                      ),
+                                      SizedBox(width: 20),
+                                      Wrap(
+                                        direction: Axis.vertical,
+                                        spacing: 10,
+                                        children: [
+                                          experienceTile(
+                                              context,
+                                              'Amica Insurance',
+                                              'Mobile Engineer',
+                                              'Aug 2022',
+                                              'Present'),
+                                          experienceTile(
+                                              context,
+                                              'Cleartech Software',
+                                              'COO',
+                                              'Mar 2020',
+                                              'Present'),
+                                          experienceTile(
+                                              context,
+                                              'FloatMe',
+                                              'Head of UX',
+                                              'Jul 2019',
+                                              'Mar 2020')
+                                        ],
+                                      ),
+                                    ])
                                   ],
-                                ),
-                              ])
-                            ],
-                          ),
+                                )
                         ],
                       ),
                     ),
-                    if (MediaQuery.of(context).size.width >= 1100)
+                    if (Responsive.isDesktop(context))
                       Container(
                           margin: EdgeInsets.all(30),
                           width: MediaQuery.of(context).size.width / 2,
