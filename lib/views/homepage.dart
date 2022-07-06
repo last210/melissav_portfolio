@@ -93,7 +93,7 @@ class _HomepageState extends State<Homepage> {
                                         experienceTile(
                                             context,
                                             'Amica Insurance',
-                                            'Mobile Engineer',
+                                            'Lead Software Developer',
                                             'Aug 2022',
                                             'Present'),
                                         experienceTile(
