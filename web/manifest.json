@@ -1,11 +1,11 @@
 {
-    "name": "melissav_portfolio",
-    "short_name": "melissav_portfolio",
+    "name": "Melissa's Flutter Portfolio",
+    "short_name": "Melissa's Flutter Portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Simple Flutter Portfolio",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
