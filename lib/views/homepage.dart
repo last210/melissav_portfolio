@@ -28,6 +28,10 @@ class _HomepageState extends State<Homepage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                if (!Responsive.isDesktop(context))
+                  Container(
+                      margin: EdgeInsets.all(30),
+                      child: Image.asset('assets/purple_laptop_girl.png')),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
